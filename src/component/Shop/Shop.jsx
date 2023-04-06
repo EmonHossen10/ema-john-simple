@@ -7,7 +7,13 @@ const Shop = () => {
         fetch("products.json")
             .then(res=>res.json())
             .then(data=>setProducts(data))
-    },[])
+    },[]);
+
+      // event handeler
+      const addToCart=(product)=>{
+        console.log(product)
+        }
+    
 
     return (
         <div className='shop-container'>
@@ -16,6 +22,7 @@ const Shop = () => {
                     products.map(product=><Product
                     key={product.id}
                     product={product}
+                    addToCart={addToCart}
                     ></Product>)
                 }
             </div>
